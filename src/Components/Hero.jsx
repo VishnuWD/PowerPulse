@@ -1,0 +1,92 @@
+import React from 'react'
+import styled, { keyframes } from 'styled-components'
+
+function Hero() {
+    return (
+        <Container>
+            <BackgroundVideo autoPlay muted loop src="src\assets\1212.mp4"></BackgroundVideo>
+            <TopLayer>
+                <Nav>
+                    <NavTitle>PowerPulse Gym.</NavTitle>
+                    <NavTitle>Menu</NavTitle>
+                </Nav>
+                <Title>
+                    <TitleSpan>P</TitleSpan>
+                    <TitleSpan>O</TitleSpan>
+                    <TitleSpan>W</TitleSpan>
+                    <TitleSpan>E</TitleSpan>
+                    <TitleSpan>R</TitleSpan>
+                    <TitleSpan>P</TitleSpan>
+                    <TitleSpan>U</TitleSpan>
+                    <TitleSpan>L</TitleSpan>
+                    <TitleSpan>S</TitleSpan>
+                    <TitleSpan>E</TitleSpan>
+
+                </Title>
+            </TopLayer>
+        </Container>
+    )
+}
+
+const fadeup = keyframes`
+  0% {
+    /* transform: scale(40); */
+    left: -100%;
+  }
+  100% {
+    /* transform: none; */
+    left: 0;
+  }
+`
+
+const Container = styled.div`
+    width: 100%;
+    height: 100vh;
+    position: relative;
+`
+
+const BackgroundVideo = styled.video`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+`
+
+const TopLayer = styled.div`
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    overflow: hidden;
+`
+
+const Nav = styled.div`
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 3vw 3vw;
+`
+const NavTitle = styled.h2`
+    font-size: 2.5vmin;
+    font-weight: 400;
+`
+const Title = styled.h1`
+    font-size: 30vmin;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+    animation: ${fadeup} 0.5s ease-out both;
+    padding: 0 5vmin;
+`
+const TitleSpan = styled.span`
+    font-family: "logo";
+    color: white;
+    padding: 0.5vmin;
+    text-shadow: 0 0 5vmin rgba(0,0,0,0.50);
+    font-weight: 500;
+  
+`
+
+
+export default Hero

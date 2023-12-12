@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: whole,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+@font-face {
+  font-family: "logo";
+  src: url(assets/Acetone-w1gn6.ttf);
+}
+@font-face {
+  font-family: "whole";
+  src: url(assets/JosefinSans-VariableFont_wght.ttf);
+}
