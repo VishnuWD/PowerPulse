@@ -1,11 +1,36 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import styled, { keyframes } from 'styled-components'
+import { gsap } from "gsap";
 
 function Hero() {
+
+    const point = useRef()
+    
+
+
     return (
         <Container>
             <BackgroundVideo autoPlay muted loop src="src\assets\1212.mp4"></BackgroundVideo>
-            <TopLayer>
+            <TopLayer onMouseMove={(event) => {
+                gsap.to(point.current,{
+                    x:event.clientX,
+                    y:event.clientY
+                })
+            }}
+            onMouseEnter={() => {
+                gsap.to(point.current,{
+                    scale:1
+                })
+            }}
+            onMouseLeave={() => {
+                gsap.to(point.current,{
+                    scale:0
+                })
+            }}
+            >
+                <CursorS ref={point}>
+                    <H5>Play Reel</H5>
+                </CursorS>
                 <Nav>
                     <NavTitle>PowerPulse Gym.</NavTitle>
                     <NavTitle>Menu</NavTitle>
@@ -23,18 +48,18 @@ function Hero() {
                     <TitleSpan>E</TitleSpan>
 
                 </Title>
+
             </TopLayer>
+
         </Container>
     )
 }
 
 const fadeup = keyframes`
   0% {
-    /* transform: scale(40); */
     left: -100%;
   }
   100% {
-    /* transform: none; */
     left: 0;
   }
 `
@@ -69,6 +94,7 @@ const Nav = styled.div`
 const NavTitle = styled.h2`
     font-size: 2.5vmin;
     font-weight: 400;
+    cursor: pointer;
 `
 const Title = styled.h1`
     font-size: 30vmin;
@@ -78,6 +104,8 @@ const Title = styled.h1`
     overflow: hidden;
     animation: ${fadeup} 0.5s ease-out both;
     padding: 0 5vmin;
+    cursor: default;
+    z-index: -2;
 `
 const TitleSpan = styled.span`
     font-family: "logo";
@@ -85,7 +113,24 @@ const TitleSpan = styled.span`
     padding: 0.5vmin;
     text-shadow: 0 0 5vmin rgba(0,0,0,0.50);
     font-weight: 500;
-  
+`
+const CursorS = styled.div`
+    height: 10vmin;
+    width: 10vmin;
+    background-color: #FF5F38;
+    border-radius: 50%;
+    position: fixed;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%);
+    cursor: default;
+`
+const H5 = styled.h5`
+    font-weight: 500;
+    font-size: 1.8vmin;
+    color: black;
 `
 
 
