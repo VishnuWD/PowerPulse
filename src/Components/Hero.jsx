@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { gsap } from "gsap";
 
+
 function Hero() {
 
     const point = useRef()
@@ -10,7 +11,9 @@ function Hero() {
 
     return (
         <Container>
-            <BackgroundVideo autoPlay muted loop src="bgvideo.mp4"></BackgroundVideo>
+            <BackgroundVideo autoPlay muted loop>
+                <source src="bgvideo.mp4" />
+            </BackgroundVideo>
 
             <TopLayer onMouseMove={(event) => {
                 gsap.to(point.current,{
