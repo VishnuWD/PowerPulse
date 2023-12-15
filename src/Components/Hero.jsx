@@ -12,7 +12,11 @@ function Hero() {
     return (
         <Container>
             {/* <BackgroundVideo autoPlay muted loop src="bgvideo.mp4"></BackgroundVideo> */}
-            <video autoPlay muted loop src="bgvideo.mp4"></video>
+            <video width="320" height="240" autoPlay muted loop >
+            <source src="bgvideo.mp4" type="video/mp4"/>
+            <source src="bgvideo.ogg" type="video/ogg"/>
+            Your browser does not support the video tag.
+            </video>
 
             <TopLayer onMouseMove={(event) => {
                 gsap.to(point.current,{
