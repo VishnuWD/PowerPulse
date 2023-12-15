@@ -12,7 +12,7 @@ function Hero() {
     return (
         <Container>
             {/* <BackgroundVideo autoPlay muted loop src="bgvideo.mp4"></BackgroundVideo> */}
-            <video autoPlay muted loop src="bgvideo.mp4"></video>
+            <video autoPlay muted loop src="/bgvideo.mp4"></video>
 
             <TopLayer onMouseMove={(event) => {
                 gsap.to(point.current,{
