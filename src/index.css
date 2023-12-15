@@ -14,3 +14,9 @@
   font-family: "whole";
   src: url(assets/JosefinSans-VariableFont_wght.ttf);
 }
+video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
